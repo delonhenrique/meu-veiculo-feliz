@@ -1,73 +1,92 @@
-# Welcome to your Lovable project
+# Aplicativo Móvel - Cadastro de Usuários e Veículos
 
-## Project info
+Um aplicativo móvel moderno para cadastro de usuários e veículos com validações específicas do Brasil (CPF, placa, RENAVAM).
 
-**URL**: https://lovable.dev/projects/f232f1a4-b3ac-4f48-925d-bdd9b2f63cc0
+## 🚀 Funcionalidades
 
-## How can I edit this code?
+- **Login seguro** com interface moderna
+- **Cadastro de usuários** com validação de CPF e telefone brasileiro
+- **Cadastro de veículos** com validação de placa (formato antigo e Mercosul) e RENAVAM
+- **Design responsivo** inspirado em apps brasileiros como Nubank
+- **Validações em tempo real** para todos os campos
+- **Interface nativa** usando Capacitor
 
-There are several ways of editing your application.
+## 📱 Tecnologias
 
-**Use Lovable**
+- **React + TypeScript** - Interface moderna e tipada
+- **Tailwind CSS** - Design system customizado
+- **Capacitor** - Build nativo para iOS e Android
+- **Shadcn/UI** - Componentes acessíveis e personalizáveis
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f232f1a4-b3ac-4f48-925d-bdd9b2f63cc0) and start prompting.
+## 🛠️ Como usar no dispositivo móvel
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### 1. Preparar o projeto
+```bash
+# Clonar e instalar dependências
+git clone <seu-repositorio>
+cd <nome-do-projeto>
+npm install
 ```
 
-**Edit a file directly in GitHub**
+### 2. Adicionar plataformas móveis
+```bash
+# Para Android
+npx cap add android
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Para iOS (apenas no Mac)
+npx cap add ios
+```
 
-**Use GitHub Codespaces**
+### 3. Build e sincronização
+```bash
+# Build do projeto
+npm run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Sincronizar com plataformas nativas
+npx cap sync
+```
 
-## What technologies are used for this project?
+### 4. Executar no dispositivo
+```bash
+# Para Android
+npx cap run android
 
-This project is built with:
+# Para iOS (Mac + Xcode necessário)
+npx cap run ios
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📋 Validações Implementadas
 
-## How can I deploy this project?
+### CPF
+- Formato: 000.000.000-00
+- Validação completa dos dígitos verificadores
+- Rejeita sequências inválidas (111.111.111-11, etc.)
 
-Simply open [Lovable](https://lovable.dev/projects/f232f1a4-b3ac-4f48-925d-bdd9b2f63cc0) and click on Share -> Publish.
+### Telefone Celular
+- Formato: (11) 99999-9999
+- Valida DDD brasileiro
+- Apenas números de celular (9 dígitos)
 
-## Can I connect a custom domain to my Lovable project?
+### Placa de Veículo
+- **Formato antigo**: ABC-1234
+- **Formato Mercosul**: ABC1D23
+- Conversão automática para maiúsculas
 
-Yes, you can!
+### RENAVAM
+- Formato: 1234.567.8901
+- Validação completa do dígito verificador
+- 11 dígitos obrigatórios
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🎨 Design System
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+O app usa um design system inspirado em aplicativos brasileiros modernos:
+
+- **Cores primárias**: Azul (#1E40AF) e Verde (#059669)
+- **Gradientes suaves** para elementos de destaque
+- **Animações fluidas** com cubic-bezier
+- **Sombras elegantes** com transparências
+- **Typography** otimizada para mobile
+
+## 📖 Para mais informações sobre mobile
+
+Leia nosso blog post completo sobre desenvolvimento móvel: https://lovable.dev/blogs/TODO
